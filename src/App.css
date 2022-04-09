@@ -22,4 +22,25 @@ footer {
 
 .logo {
   height: 160px;
+  margin-top: 20px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.user-state {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.user-desc {
+}
+
+.user-img {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 80px;
+  height: 80px;
 }
