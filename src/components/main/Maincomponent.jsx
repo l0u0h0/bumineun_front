@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../image/img.png";
+import footer from "../../image/img_5.png";
 
 export default function MainComponent() {
   return (
@@ -19,7 +20,7 @@ export default function MainComponent() {
       </div>
       <div className="body" style={{ height: "600px" }}></div>
       <div className="footer">
-        <img className="footer-img" alt="" />
+        <img className="footer-img" src={footer} alt="" />
       </div>
     </div>
   );
