@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../../logo.svg";
+import logo from "../../image/img.png";
 
 export default function MainComponent() {
   return (
-    <div className="App">
+    <div className="App-main">
       <div className="header">
         <img className="logo" src={logo} alt="logo" />
         <div className="user-state">
@@ -18,7 +18,9 @@ export default function MainComponent() {
         <div className="menu"></div>
       </div>
       <div className="body" style={{ height: "600px" }}></div>
-      <footer></footer>
+      <div className="footer">
+        <img className="footer-img" alt="" />
+      </div>
     </div>
   );
 }
