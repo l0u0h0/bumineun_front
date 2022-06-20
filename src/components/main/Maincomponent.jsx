@@ -1,6 +1,4 @@
 import React from "react";
-
-import footer from "../../image/img_5.png";
 import Banner from "../common/BannerComponent";
 import Header from "../common/HeaderComponent";
 
