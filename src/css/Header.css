@@ -1,37 +1,28 @@
 .header {
   width: 100%;
-  height: 50px;
+  height: 80px;
   background-color: #003333;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header .back-area {
-  margin: auto;
-  display: flex;
-}
-
-.header .logo-area {
-  margin: auto;
-  display: flex;
-}
-
+.header .back-area,
+.header .logo-area,
 .header .search-area {
-  margin: auto;
   display: flex;
 }
 
 .header .back-area .back {
-  width: 40px;
-  height: 40px;
-  margin: auto;
+  width: 60px;
+  height: 60px;
 }
 
 .header .logo-area .logo {
-  height: 50px;
-  margin: auto;
+  height: 80px;
 }
 
 .header .search-area .search {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
