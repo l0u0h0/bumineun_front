@@ -6,10 +6,10 @@ export default function MainComponent() {
   return (
     <div className="App-main">
       <Header />
-      <div className="body" style={{ height: "380px" }}>
+      <div className="body" style={{ height: "760px" }}>
         <div className="menu"></div>
       </div>
-      <div className="body" style={{ height: "600px" }}></div>
+      <div className="body" style={{ height: "1200px" }}></div>
       <Banner />
     </div>
   );
