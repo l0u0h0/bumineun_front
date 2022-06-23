@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
 
 export default function MainComponent() {
@@ -18,26 +19,35 @@ export default function MainComponent() {
 }
 
 function Body1() {
-  const swiper = useSwiper();
-  const Tab1Click = () => swiper.slideTo(1, 300, false);
-  const Tab2Click = () => swiper.activeIndex(2);
-  const Tab3Click = () => swiper.activeIndex(3);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div className="tab-navigation">
       <hr />
       <h3>Today's</h3>
-      <Swiper className="tab-title" slidesPerView={3}>
+      <Swiper
+        className="tab-title"
+        slidesPerView={3}
+        onSwiper={setThumbsSwiper}
+        freeMode
+        watchSlidesProgress
+        modules={[FreeMode, Thumbs]}
+      >
         <SwiperSlide>
-          <button onClick={Tab1Click}>실시간</button>
+          <div className="tab1">실시간</div>
         </SwiperSlide>
         <SwiperSlide>
-          <button onClick={Tab2Click}>단어별</button>
+          <div className="tab2">단어별</div>
         </SwiperSlide>
         <SwiperSlide>
-          <button onClick={Tab3Click}>통계</button>
+          <div className="tab3">통계</div>
         </SwiperSlide>
       </Swiper>
-      <Swiper className="tab-contents" slidesPerView={1}>
+      <Swiper
+        className="tab-contents"
+        slidesPerView={1}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Thumbs]}
+      >
         <SwiperSlide tabIndex={1}>
           <Tab1 />
         </SwiperSlide>
