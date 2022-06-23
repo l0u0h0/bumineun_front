@@ -18,3 +18,11 @@
 .body .tab-navigation h3 {
   color: rgb(99, 99, 99);
 }
+
+.body .tab-navigation .swiper-wrapper {
+  display: flex;
+}
+
+.body .Tab {
+  width: 547px;
+}
