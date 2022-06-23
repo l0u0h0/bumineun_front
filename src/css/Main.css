@@ -9,5 +9,12 @@
   margin-left: 30px;
   margin-right: 30px;
   border: 1px solid red;
-  background-color: rgba(90, 86, 86, 0.522);
+}
+
+.body .tab-navigation {
+  margin-top: 50px;
+}
+
+.body .tab-navigation h3 {
+  color: rgb(99, 99, 99);
 }
