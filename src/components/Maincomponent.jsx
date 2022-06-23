@@ -1,7 +1,8 @@
 import React from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
 
 export default function MainComponent() {
   return (
@@ -17,23 +18,28 @@ export default function MainComponent() {
 }
 
 function Body1() {
+  const swiper = useSwiper();
+  const Tab1Click = () => swiper.slideNext();
+  const Tab2Click = () => swiper.activeIndex(2);
+  const Tab3Click = () => swiper.activeIndex(3);
   return (
     <div className="tab-navigation">
       <hr />
       <h3>Today's</h3>
-      <div className="tab-title">
-        <button>실시간</button>
-        <button>단어별</button>
-        <button>통계</button>
-      </div>
+
       <Swiper slidesPerView={1}>
-        <SwiperSlide>
+        <div className="tab-title">
+          <button onClick={Tab1Click}>실시간</button>
+          <button onClick={Tab2Click}>단어별</button>
+          <button onClick={Tab3Click}>통계</button>
+        </div>
+        <SwiperSlide tabIndex={1}>
           <Tab1 />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide tabIndex={2}>
           <Tab2 />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide tabIndex={3}>
           <Tab3 />
         </SwiperSlide>
       </Swiper>
