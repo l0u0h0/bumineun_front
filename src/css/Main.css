@@ -19,7 +19,7 @@
   color: rgb(99, 99, 99);
 }
 
-.body .tab-navigation .swiper-wrapper {
+.body .tab-navigation .tab-contents .swiper-wrapper {
   display: flex;
 }
 

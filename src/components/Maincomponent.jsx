@@ -19,20 +19,25 @@ export default function MainComponent() {
 
 function Body1() {
   const swiper = useSwiper();
-  const Tab1Click = () => swiper.slideNext();
+  const Tab1Click = () => swiper.slideTo(1, 300, false);
   const Tab2Click = () => swiper.activeIndex(2);
   const Tab3Click = () => swiper.activeIndex(3);
   return (
     <div className="tab-navigation">
       <hr />
       <h3>Today's</h3>
-
-      <Swiper slidesPerView={1}>
-        <div className="tab-title">
+      <Swiper className="tab-title" slidesPerView={3}>
+        <SwiperSlide>
           <button onClick={Tab1Click}>실시간</button>
+        </SwiperSlide>
+        <SwiperSlide>
           <button onClick={Tab2Click}>단어별</button>
+        </SwiperSlide>
+        <SwiperSlide>
           <button onClick={Tab3Click}>통계</button>
-        </div>
+        </SwiperSlide>
+      </Swiper>
+      <Swiper className="tab-contents" slidesPerView={1}>
         <SwiperSlide tabIndex={1}>
           <Tab1 />
         </SwiperSlide>
