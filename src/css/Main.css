@@ -3,6 +3,7 @@
   width: 615px;
   border: 3px solid black;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .body {
@@ -15,14 +16,41 @@
   margin-top: 50px;
 }
 
-.body .tab-navigation h3 {
+.body .tab-navigation h2 {
   color: rgb(99, 99, 99);
+}
+
+.body .tab-navigation .swiper-area {
+  height: 240px;
+  margin-top: 5%;
+}
+
+.body .tab-navigation .tab-title {
+  height: 20%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.body .tab-navigation .tab-contents {
+  height: 80%;
+}
+
+.body .tab-navigation .tab-title .title {
+  font-size: 15pt;
+  text-align: center;
+}
+
+.body .tab-navigation .tab-title .swiper-slide-thumb-active .title {
+  font-weight: bold;
+  color: #003333;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #003333;
 }
 
 .body .tab-navigation .tab-contents .swiper-wrapper {
   display: flex;
 }
 
-.body .Tab {
-  width: 547px;
+.body .tab-navigation .tab-contents .contents {
+  text-align: center;
 }
