@@ -103,7 +103,6 @@ function Body2() {
         lang: "ko",
         sort_by: "relevancy",
         page: "1",
-        page_size: "10",
       },
       headers: {
         "x-api-key": "xfvkgp-Pa2JHG3SBqzOqpNdyjsG0Ofa6rkYJz-0ELVU",
@@ -113,6 +112,7 @@ function Body2() {
       setLoading(true);
       try {
         const result = await axios.request(options);
+        console.log(result);
         setNewslist(result.data.articles);
       } catch (error) {
         console.log(error);
