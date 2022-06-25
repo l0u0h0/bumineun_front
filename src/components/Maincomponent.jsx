@@ -2,6 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
+// ex_newsimg
+import newsimg_1 from "../image/img_1.png";
+import newsimg_2 from "../image/img_2.png";
+import newsimg_3 from "../image/img_3.png";
+import newsimg_4 from "../image/img_4.png";
 
 // Swiper import
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,7 +25,8 @@ export default function MainComponent() {
         <Body1 />
       </div>
       <div className="body" style={{ height: "1200px" }}>
-        <Body2 />
+        {/* <Body2 /> */}
+        <Body2Example />
       </div>
       <Banner />
     </div>
@@ -162,5 +168,56 @@ const News = ({ news }) => {
         </>
       )}
     </>
+  );
+};
+
+// api 라이센스 문제로 이미지로 잠시 대체
+function Body2Example() {
+  const [examplelist, setExamplelist] = useState([]);
+  useEffect(() => {
+    const result = [
+      {
+        img: newsimg_1,
+        _id: "newsimg_1",
+        alt: "ex_img_1",
+      },
+      {
+        img: newsimg_2,
+        _id: "newsimg_2",
+        alt: "ex_img_2",
+      },
+      {
+        img: newsimg_3,
+        _id: "newsimg_3",
+        alt: "ex_img_3",
+      },
+      {
+        img: newsimg_4,
+        _id: "newsimg_4",
+        alt: "ex_img_4",
+      },
+    ];
+    setExamplelist(result);
+  }, []);
+
+  return (
+    <div className="main-body-second">
+      <h2>범죄 관련 뉴스</h2>
+      <div className="news-area">
+        {examplelist.map((img) => (
+          <Example key={img._id} list={img} />
+        ))}
+      </div>
+      <button className="btn btn--link">범죄 관련 은어 확인</button>
+    </div>
+  );
+}
+
+const Example = ({ list }) => {
+  const { img, alt } = list;
+  return (
+    <div>
+      <img src={img} alt={alt} />
+    </div>
   );
 };

@@ -64,3 +64,18 @@
 .body .main-body-second h2 {
   color: rgb(99, 99, 99);
 }
+
+.body .main-body-second .btn--link {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 2px 2px rgb(144, 144, 144);
+  font-size: medium;
+}
+
+/* MAIN BODY SECOND EXAMPLE */
+.body .main-body-second .news-area img {
+  width: 100%;
+}
