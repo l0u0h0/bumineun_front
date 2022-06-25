@@ -1,5 +1,5 @@
 // import
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
 
@@ -7,6 +7,9 @@ import Header from "./common/HeaderComponent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
+
+// axios import
+import axios from "axios";
 
 // MAIN AREA
 export default function MainComponent() {
@@ -88,10 +91,76 @@ function Tab3() {
 
 // NEWS API
 function Body2() {
+  const [newslist, setNewslist] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://api.newscatcherapi.com/v2/search",
+      params: {
+        q: "전기차",
+        lang: "ko",
+        sort_by: "relevancy",
+        page: "1",
+        page_size: "10",
+      },
+      headers: {
+        "x-api-key": "xfvkgp-Pa2JHG3SBqzOqpNdyjsG0Ofa6rkYJz-0ELVU",
+      },
+    };
+    const newsApi = async () => {
+      setLoading(true);
+      try {
+        const result = await axios.request(options);
+        setNewslist(result.data.articles);
+      } catch (error) {
+        console.log(error);
+      }
+      setLoading(false);
+    };
+    newsApi();
+  }, []);
+  if (loading) {
+    return <div>로딩중입니다</div>;
+  }
+  if (!newslist) {
+    return null;
+  }
   return (
     <div className="main-body-second">
       <h2>범죄 관련 뉴스</h2>
-      <div className="news-area"></div>
+      <div className="news-area">
+        {newslist.map((news) => (
+          <News key={news._id} news={news} />
+        ))}
+      </div>
     </div>
   );
 }
+
+const News = ({ news }) => {
+  const { title, excerpt, link, media } = news;
+  return (
+    <>
+      {media && (
+        <>
+          <div>
+            <h2>
+              <a href={link} target="_blank" rel="nooper noreferrer">
+                {title}
+              </a>
+            </h2>
+            <p>{excerpt}</p>
+          </div>
+
+          <div>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <img src={media} alt="news_thumnail" />
+            </a>
+          </div>
+        </>
+      )}
+    </>
+  );
+};
