@@ -1,8 +1,6 @@
-.footer {
-  background-color: rgba(90, 86, 86, 0.522);
-}
-
+/* BANNER */
 .App-banner .banner-img {
-  width: 100%;
+  margin-left: 30px;
+  width: 90%;
   background-image: url("../image/img_5.png");
 }

@@ -1,10 +1,14 @@
+// import
 import React, { useState } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
+
+// Swiper import
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
 
+// MAIN AREA
 export default function MainComponent() {
   return (
     <div className="App-main">
@@ -12,16 +16,19 @@ export default function MainComponent() {
       <div className="body" style={{ height: "760px" }}>
         <Body1 />
       </div>
-      <div className="body" style={{ height: "1200px" }}></div>
+      <div className="body" style={{ height: "1200px" }}>
+        <Body2 />
+      </div>
       <Banner />
     </div>
   );
 }
 
+// TAB AREA
 function Body1() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div className="tab-navigation">
+    <div className="main-body-first">
       <hr />
       <h2>Today's</h2>
       <div className="swiper-area">
@@ -66,6 +73,7 @@ function Body1() {
   );
 }
 
+// TAB FRAGMENT
 function Tab1() {
   return <div className="contents">실시간 탭</div>;
 }
@@ -76,4 +84,14 @@ function Tab2() {
 
 function Tab3() {
   return <div className="contents">통계 탭</div>;
+}
+
+// NEWS API
+function Body2() {
+  return (
+    <div className="main-body-second">
+      <h2>범죄 관련 뉴스</h2>
+      <div className="news-area"></div>
+    </div>
+  );
 }
