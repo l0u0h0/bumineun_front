@@ -14,7 +14,7 @@ import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
 
 // axios import
-import axios from "axios";
+// import axios from "axios";
 
 // MAIN AREA
 export default function MainComponent() {
@@ -90,31 +90,31 @@ function Tab1() {
         <table>
           <tbody>
             <tr className="table-first">
-              <td>1.</td>
+              <th>1.</th>
               <td>킹받네</td>
               <td>-</td>
               <td>120,862</td>
             </tr>
             <tr className="table-second">
-              <td>2.</td>
+              <th>2.</th>
               <td>킹받네</td>
               <td>-</td>
               <td>120,862</td>
             </tr>
             <tr className="table-third">
-              <td>3.</td>
+              <th>3.</th>
               <td>킹받네</td>
               <td>-</td>
               <td>120,862</td>
             </tr>
             <tr className="table-forth">
-              <td>4.</td>
+              <th>4.</th>
               <td>킹받네</td>
               <td>-</td>
               <td>120,862</td>
             </tr>
             <tr className="table-fifth">
-              <td>5.</td>
+              <th>5.</th>
               <td>킹받네</td>
               <td>-</td>
               <td>120,862</td>
@@ -138,80 +138,80 @@ function Tab3() {
 }
 
 // NEWS API
-function Body2() {
-  const [newslist, setNewslist] = useState(null);
-  const [loading, setLoading] = useState(false);
+// function Body2() {
+//   const [newslist, setNewslist] = useState(null);
+//   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://api.newscatcherapi.com/v2/search",
-      params: {
-        q: "전기차",
-        lang: "ko",
-        sort_by: "relevancy",
-        page: "1",
-      },
-      headers: {
-        "x-api-key": "xfvkgp-Pa2JHG3SBqzOqpNdyjsG0Ofa6rkYJz-0ELVU",
-      },
-    };
-    const newsApi = async () => {
-      setLoading(true);
-      try {
-        const result = await axios.request(options);
-        console.log(result);
-        setNewslist(result.data.articles);
-      } catch (error) {
-        console.log(error);
-      }
-      setLoading(false);
-    };
-    newsApi();
-  }, []);
-  if (loading) {
-    return <div>로딩중입니다</div>;
-  }
-  if (!newslist) {
-    return null;
-  }
-  return (
-    <div className="main-body-second">
-      <h2>범죄 관련 뉴스</h2>
-      <div className="news-area">
-        {newslist.map((news) => (
-          <News key={news._id} news={news} />
-        ))}
-      </div>
-    </div>
-  );
-}
+//   useEffect(() => {
+//     const options = {
+//       method: "GET",
+//       url: "https://api.newscatcherapi.com/v2/search",
+//       params: {
+//         q: "전기차",
+//         lang: "ko",
+//         sort_by: "relevancy",
+//         page: "1",
+//       },
+//       headers: {
+//         "x-api-key": "xfvkgp-Pa2JHG3SBqzOqpNdyjsG0Ofa6rkYJz-0ELVU",
+//       },
+//     };
+//     const newsApi = async () => {
+//       setLoading(true);
+//       try {
+//         const result = await axios.request(options);
+//         console.log(result);
+//         setNewslist(result.data.articles);
+//       } catch (error) {
+//         console.log(error);
+//       }
+//       setLoading(false);
+//     };
+//     newsApi();
+//   }, []);
+//   if (loading) {
+//     return <div>로딩중입니다</div>;
+//   }
+//   if (!newslist) {
+//     return null;
+//   }
+//   return (
+//     <div className="main-body-second">
+//       <h2>범죄 관련 뉴스</h2>
+//       <div className="news-area">
+//         {newslist.map((news) => (
+//           <News key={news._id} news={news} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
-const News = ({ news }) => {
-  const { title, excerpt, link, media } = news;
-  return (
-    <>
-      {media && (
-        <>
-          <div>
-            <h2>
-              <a href={link} target="_blank" rel="nooper noreferrer">
-                {title}
-              </a>
-            </h2>
-            <p>{excerpt}</p>
-          </div>
+// const News = ({ news }) => {
+//   const { title, excerpt, link, media } = news;
+//   return (
+//     <>
+//       {media && (
+//         <>
+//           <div>
+//             <h2>
+//               <a href={link} target="_blank" rel="nooper noreferrer">
+//                 {title}
+//               </a>
+//             </h2>
+//             <p>{excerpt}</p>
+//           </div>
 
-          <div>
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              <img src={media} alt="news_thumnail" />
-            </a>
-          </div>
-        </>
-      )}
-    </>
-  );
-};
+//           <div>
+//             <a href={link} target="_blank" rel="noopener noreferrer">
+//               <img src={media} alt="news_thumnail" />
+//             </a>
+//           </div>
+//         </>
+//       )}
+//     </>
+//   );
+// };
 
 // api 라이센스 문제로 이미지로 잠시 대체
 function Body2Example() {
