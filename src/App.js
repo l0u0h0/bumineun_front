@@ -1,6 +1,6 @@
-import "./css/Main.css";
-import "./css/Header.css";
-import "./css/Banner.css";
+import "./css/Main.scss";
+import "./css/Header.scss";
+import "./css/Banner.scss";
 import MainComponent from "./components/Maincomponent";
 
 function App() {
