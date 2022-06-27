@@ -21,10 +21,10 @@ export default function MainComponent() {
   return (
     <div className="App-main">
       <Header />
-      <div className="body" style={{ height: "760px" }}>
+      <div className="body">
         <Body1 />
       </div>
-      <div className="body" style={{ height: "1200px" }}>
+      <div className="body">
         {/* <Body2 /> */}
         <Body2Example />
       </div>
@@ -84,7 +84,49 @@ function Body1() {
 
 // TAB FRAGMENT
 function Tab1() {
-  return <div className="contents">실시간 탭</div>;
+  return (
+    <div className="contents">
+      <div className="table-area-first">
+        <table>
+          <tbody>
+            <tr className="table-first">
+              <td>1.</td>
+              <td>킹받네</td>
+              <td>-</td>
+              <td>120,862</td>
+            </tr>
+            <tr className="table-second">
+              <td>2.</td>
+              <td>킹받네</td>
+              <td>-</td>
+              <td>120,862</td>
+            </tr>
+            <tr className="table-third">
+              <td>3.</td>
+              <td>킹받네</td>
+              <td>-</td>
+              <td>120,862</td>
+            </tr>
+            <tr className="table-forth">
+              <td>4.</td>
+              <td>킹받네</td>
+              <td>-</td>
+              <td>120,862</td>
+            </tr>
+            <tr className="table-fifth">
+              <td>5.</td>
+              <td>킹받네</td>
+              <td>-</td>
+              <td>120,862</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="update-time">
+        <p>2022-01-01 12:00 기준</p>
+      </div>
+    </div>
+  );
 }
 
 function Tab2() {
