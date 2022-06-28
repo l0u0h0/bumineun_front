@@ -126,8 +126,8 @@ function Tab2() {
           </tbody>
         </table>
       </div>
-      <div className="update-time">
-        <p>2022-01-01 12:00 기준</p>
+      <div className="link-area">
+        <button className="btn btn--link">더 많은 정보 확인</button>
       </div>
     </div>
   );
