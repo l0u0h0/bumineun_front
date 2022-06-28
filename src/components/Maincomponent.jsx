@@ -84,41 +84,20 @@ function Body1() {
 
 // TAB FRAGMENT
 function Tab1() {
+  const list = [1, 2, 3, 4, 5];
   return (
     <div className="contents">
       <div className="table-area-first">
         <table>
           <tbody>
-            <tr className="table-first">
-              <th>1.</th>
-              <td>킹받네</td>
-              <td>-</td>
-              <td>120,862</td>
-            </tr>
-            <tr className="table-second">
-              <th>2.</th>
-              <td>킹받네</td>
-              <td>-</td>
-              <td>120,862</td>
-            </tr>
-            <tr className="table-third">
-              <th>3.</th>
-              <td>킹받네</td>
-              <td>-</td>
-              <td>120,862</td>
-            </tr>
-            <tr className="table-forth">
-              <th>4.</th>
-              <td>킹받네</td>
-              <td>-</td>
-              <td>120,862</td>
-            </tr>
-            <tr className="table-fifth">
-              <th>5.</th>
-              <td>킹받네</td>
-              <td>-</td>
-              <td>120,862</td>
-            </tr>
+            {list.map((num) => (
+              <tr>
+                <th className="data-rank">{num}.</th>
+                <td className="data-word">킹받네</td>
+                <td className="data-state">-</td>
+                <td calssName="data-num">120,862</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -130,7 +109,28 @@ function Tab1() {
 }
 
 function Tab2() {
-  return <div className="contents">단어별 탭</div>;
+  const list = [1, 2, 3, 4, 5];
+  return (
+    <div className="contents">
+      <div className="table-area-second">
+        <table>
+          <tbody>
+            {list.map((num) => (
+              <tr>
+                <th className="data-rank">{num}.</th>
+                <td className="data-word">킹받네</td>
+                <td className="data-state">-</td>
+                <td calssName="data-num">120,862</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="update-time">
+        <p>2022-01-01 12:00 기준</p>
+      </div>
+    </div>
+  );
 }
 
 function Tab3() {

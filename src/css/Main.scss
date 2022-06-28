@@ -27,7 +27,7 @@
       color: rgb(99, 99, 99);
     }
     .swiper-area {
-      height: 240px;
+      height: 360px;
       margin-top: 5%;
     }
     .tab-title {
@@ -54,7 +54,53 @@
         text-align: center;
         /* TAB FRAGMENT 1 */
         .table-area-first table {
-          width: 100%;
+          width: 90%;
+          margin-left: 30px;
+          font-size: large;
+          border-collapse: separate;
+          border-spacing: 0 10px;
+          .data-rank {
+            width: 5%;
+          }
+          .data-word {
+            width: 60%;
+            padding-left: 50px;
+            text-align: start;
+          }
+          .data-state {
+            width: 5%;
+          }
+          .data-num {
+            width: 20%;
+          }
+        }
+        .update-time {
+          margin-top: 4%;
+          padding-right: 30px;
+          text-align: end;
+        }
+
+        /* TAB FRAGMENT 2 */
+        .table-area-second table {
+          width: 90%;
+          margin-left: 30px;
+          font-size: large;
+          border-collapse: separate;
+          border-spacing: 0 10px;
+          .data-rank {
+            width: 5%;
+          }
+          .data-word {
+            width: 60%;
+            padding-left: 50px;
+            text-align: start;
+          }
+          .data-state {
+            width: 5%;
+          }
+          .data-num {
+            width: 20%;
+          }
         }
       }
     }
