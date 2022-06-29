@@ -7,7 +7,8 @@ import newsimg_1 from "../image/img_1.png";
 import newsimg_2 from "../image/img_2.png";
 import newsimg_3 from "../image/img_3.png";
 import newsimg_4 from "../image/img_4.png";
-
+// ex_staticimg
+import staticimg from "../image/img_6.png";
 // Swiper import
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper";
@@ -134,7 +135,16 @@ function Tab2() {
 }
 
 function Tab3() {
-  return <div className="contents">통계 탭</div>;
+  return (
+    <div className="contents">
+      <div className="static-data-area">
+        <img src={staticimg} alt="staticimg" className="static-img" />
+      </div>
+      <div className="link-area">
+        <button className="btn btn--link">더 많은 정보 확인</button>
+      </div>
+    </div>
+  );
 }
 
 // NEWS API

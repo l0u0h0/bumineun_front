@@ -39,11 +39,11 @@
       color: rgb(99, 99, 99);
     }
     .swiper-area {
-      height: 360px;
+      height: 400px;
       margin-top: 5%;
     }
     .tab-title {
-      height: 20%;
+      height: 10%;
       margin-bottom: 10px;
       box-sizing: border-box;
       .title {
@@ -68,6 +68,7 @@
         .table-area-first table {
           width: 90%;
           margin-left: 30px;
+          margin-top: 3%;
           font-size: large;
           border-collapse: separate;
           border-spacing: 0 10px;
@@ -96,6 +97,7 @@
         .table-area-second table {
           width: 90%;
           margin-left: 30px;
+          margin-top: 3%;
           font-size: large;
           border-collapse: separate;
           border-spacing: 0 10px;
@@ -113,6 +115,11 @@
           .data-num {
             width: 20%;
           }
+        }
+
+        /* TAB FRAGMENT 3 */
+        .static-data-area .static-img {
+          width: 70%;
         }
 
         .btn--link {
