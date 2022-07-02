@@ -1,3 +1,4 @@
+import "./App.scss";
 import "./css/Main.scss";
 import "./css/Header.scss";
 import "./css/Banner.scss";
