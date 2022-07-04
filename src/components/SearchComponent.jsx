@@ -9,13 +9,18 @@ export default function SearchComponent() {
       <Header />
       <div className="search-body">
         <InputGroup className="mb-3">
-          <Button variant="outline-secondary" id="button-addon1">
+          <Button
+            className="search-btn"
+            variant="outline-secondary"
+            id="button-addon1"
+          >
             검색
           </Button>
           <FormControl
             aria-label="Example text with button addon"
             aria-describedby="basic-addon1"
-            placeholder="검색어를 입력하세요."
+            placeholder="검색어를 입력해주세요."
+            className="search-text"
           />
         </InputGroup>
       </div>
