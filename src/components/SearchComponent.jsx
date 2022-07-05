@@ -23,10 +23,10 @@ function SearchBefore({ setstate }) {
     <div className="search-body">
       <InputGroup className="mb-3">
         <Button
+          type="submit"
           className="search-btn"
           variant="outline-secondary"
           id="button-addon1"
-          onClick={search}
           onSubmit={search}
         >
           검색
