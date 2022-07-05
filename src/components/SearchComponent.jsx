@@ -27,6 +27,7 @@ function SearchBefore({ setstate }) {
           variant="outline-secondary"
           id="button-addon1"
           onClick={search}
+          onSubmit={search}
         >
           검색
         </Button>
