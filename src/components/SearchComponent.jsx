@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
 import { InputGroup, Button, FormControl } from "react-bootstrap";
@@ -45,6 +45,15 @@ function SearchBefore({ setstate }) {
 }
 
 function SearchAfter({ setstate }) {
+  const [data, setData] = useState({});
+  useEffect(() => {
+    setData({
+      crime: "한마디로 좋은 손님",
+      word: ["1. 개구리의 함북 방언", "2. 한마디로 좋은 손님"],
+      static: staticimg,
+    });
+  }, []);
+  console.log(data.word);
   return (
     <div className="search-body">
       <InputGroup className="mb-3">
@@ -65,16 +74,15 @@ function SearchAfter({ setstate }) {
       </InputGroup>
       <div className="result-crime">
         <h2>범죄 사전</h2>
-        <p>한마디로 좋은 손님</p>
+        <p>{data.crime}</p>
       </div>
       <div className="result-word">
         <h2>은어 사전</h2>
-        <p>1. 개구리의 함북 방언</p>
-        <p>2. 한마디로 좋은 손님</p>
+        {data.word && data.word.map((text) => <p>{text}</p>)}
       </div>
       <div className="result-static">
         <h2>통계 추세</h2>
-        <img src={staticimg} alt="static-result" />
+        <img src={data.static} alt="static-result" />
       </div>
     </div>
   );
