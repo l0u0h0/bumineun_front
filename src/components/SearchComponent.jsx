@@ -19,6 +19,8 @@ export default function SearchComponent() {
 }
 
 function SearchBefore({ setstate }) {
+  const [text, setText] = useState([]);
+  const [ref, setRef] = useState(null);
   return (
     <div className="search-body">
       <InputGroup className="mb-3">
@@ -36,12 +38,15 @@ function SearchBefore({ setstate }) {
           aria-describedby="search-addon"
           placeholder="검색어를 입력해주세요."
           className="search-text"
+          ref={setRef}
+          type="input"
         />
       </InputGroup>
     </div>
   );
   function search() {
-    console.log();
+    setText(text.push(ref.value));
+    console.log(text);
     setstate(1);
   }
 }
@@ -55,7 +60,6 @@ function SearchAfter({ setstate }) {
       static: staticimg,
     });
   }, []);
-  console.log(data.word);
   return (
     <div className="search-body">
       <InputGroup className="mb-3">
