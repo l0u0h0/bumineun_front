@@ -7,19 +7,36 @@ import staticimg from "../image/img_6.png";
 
 export default function SearchComponent() {
   const [searchstate, setSearchstate] = useState(0);
-
+  const [search, setSearch] = useState([]);
+  useEffect(() => {
+    searchstate === 0 && setSearch([]);
+    searchstate === 1 && console.log(search[0]);
+  }, [searchstate]);
   return (
     <div className="App-search">
       <Header />
-      {searchstate === 0 && <SearchBefore setstate={setSearchstate} />}
-      {searchstate === 1 && <SearchAfter setstate={setSearchstate} />}
+      {searchstate === 0 && (
+        <SearchBefore
+          key={`search_before`}
+          setState={setSearchstate}
+          setSearch={setSearch}
+          search={search}
+        />
+      )}
+      {searchstate === 1 && (
+        <SearchAfter
+          key={`search_after`}
+          setState={setSearchstate}
+          setSearch={setSearch}
+          search={search}
+        />
+      )}
       <Banner />
     </div>
   );
 }
 
-function SearchBefore({ setstate }) {
-  const [text, setText] = useState([]);
+function SearchBefore({ setState, setSearch, search }) {
   const [ref, setRef] = useState(null);
   return (
     <div className="search-body">
@@ -30,7 +47,7 @@ function SearchBefore({ setstate }) {
           className="search-btn"
           variant="outline-secondary"
           id="button-addon1"
-          onClick={search}
+          onClick={Searchstate}
           value="검색"
         />
         <FormControl
@@ -44,14 +61,15 @@ function SearchBefore({ setstate }) {
       </InputGroup>
     </div>
   );
-  function search() {
-    setText(text.push(ref.value));
-    console.log(text);
-    setstate(1);
+  function Searchstate() {
+    setSearch(search.push(ref.value));
+    console.log(search[0]);
+    console.log(ref.value);
+    setState(1);
   }
 }
 
-function SearchAfter({ setstate }) {
+function SearchAfter({ setState, setSearch, search }) {
   const [data, setData] = useState({});
   useEffect(() => {
     setData({
@@ -59,6 +77,7 @@ function SearchAfter({ setstate }) {
       word: ["1. 개구리의 함북 방언", "2. 한마디로 좋은 손님"],
       static: staticimg,
     });
+    console.log(search[0]);
   }, []);
   return (
     <div className="search-body">
@@ -69,13 +88,13 @@ function SearchAfter({ setstate }) {
           className="search-btn"
           variant="outline-secondary"
           id="button-addon1"
-          onClick={searchEnd}
+          onClick={Searchstate}
           value="검색"
         />
         <FormControl
           aria-label="Example text with button addon"
           aria-describedby="basic-addon1"
-          placeholder="머구리"
+          placeholder={search[0]}
           className="search-text"
         />
       </InputGroup>
@@ -85,7 +104,8 @@ function SearchAfter({ setstate }) {
       </div>
       <div className="result-word">
         <h2>은어 사전</h2>
-        {data.word && data.word.map((text) => <p>{text}</p>)}
+        {data.word &&
+          data.word.map((text, i) => <p key={`mean_${i}`}>{text}</p>)}
       </div>
       <div className="result-static">
         <h2>통계 추세</h2>
@@ -93,7 +113,7 @@ function SearchAfter({ setstate }) {
       </div>
     </div>
   );
-  function searchEnd() {
-    setstate(0);
+  function Searchstate() {
+    setState(0);
   }
 }
