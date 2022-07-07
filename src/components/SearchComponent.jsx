@@ -23,17 +23,17 @@ function SearchBefore({ setstate }) {
     <div className="search-body">
       <InputGroup className="mb-3">
         <Button
+          as="input"
           type="submit"
           className="search-btn"
           variant="outline-secondary"
           id="button-addon1"
-          onSubmit={search}
-        >
-          검색
-        </Button>
+          onClick={search}
+          value="검색"
+        />
         <FormControl
           aria-label="Example text with button addon"
-          aria-describedby="basic-addon1"
+          aria-describedby="search-addon"
           placeholder="검색어를 입력해주세요."
           className="search-text"
         />
@@ -41,6 +41,7 @@ function SearchBefore({ setstate }) {
     </div>
   );
   function search() {
+    console.log();
     setstate(1);
   }
 }
@@ -59,13 +60,14 @@ function SearchAfter({ setstate }) {
     <div className="search-body">
       <InputGroup className="mb-3">
         <Button
+          as="input"
+          type="submit"
           className="search-btn"
           variant="outline-secondary"
           id="button-addon1"
           onClick={searchEnd}
-        >
-          검색
-        </Button>
+          value="검색"
+        />
         <FormControl
           aria-label="Example text with button addon"
           aria-describedby="basic-addon1"
