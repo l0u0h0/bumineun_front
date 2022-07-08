@@ -1,0 +1,23 @@
+.App-crimemain {
+  .crimemain-body {
+    width: 90%;
+    height: 800px;
+    margin: auto;
+    margin-top: 25%;
+    margin-bottom: 10%;
+    .category-area {
+      margin: 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .category {
+        width: 40%;
+        height: 170px;
+        margin: 20px;
+        font-size: 20pt;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    }
+  }
+}

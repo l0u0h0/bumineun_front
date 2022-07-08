@@ -13,6 +13,8 @@ import staticimg from "../image/img_6.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
+// Router import
+import { Link } from "react-router-dom";
 
 // axios import
 // import axios from "axios";
@@ -260,7 +262,9 @@ function Body2Example() {
           <Example key={img._id} list={img} />
         ))}
       </div>
-      <button className="btn btn--link">범죄 관련 은어 확인</button>
+      <Link to="/crimemain">
+        <button className="btn btn--link">범죄 관련 은어 확인</button>
+      </Link>
     </div>
   );
 }

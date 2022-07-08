@@ -1,10 +1,13 @@
+// import
 import React, { useState } from "react";
 import Banner from "./common/BannerComponent";
 import Header from "./common/HeaderComponent";
+// react-bootstrap
 import { InputGroup, Button, FormControl } from "react-bootstrap";
-
+// testimg
 import staticimg from "../image/img_6.png";
 
+// Search main Component
 export default function SearchComponent() {
   const [searchstate, setSearchstate] = useState(0);
   const [search, setSearch] = useState({
@@ -42,10 +45,10 @@ export default function SearchComponent() {
         </InputGroup>
         {searchstate === 1 && <Searchresult data={search} />}
       </div>
-
       <Banner />
     </div>
   );
+
   function Searchstate() {
     if (searchstate === 1) {
       setSearchstate(0);
@@ -60,6 +63,7 @@ export default function SearchComponent() {
   }
 }
 
+// Search result Component
 function Searchresult(search) {
   const data = search.data.test;
   return (
