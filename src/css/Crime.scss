@@ -10,13 +10,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      .category {
+      a {
         width: 40%;
-        height: 170px;
         margin: 20px;
-        font-size: 20pt;
-        font-weight: bold;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        .category {
+          height: 170px;
+          font-size: 20pt;
+          font-weight: bold;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
       }
     }
   }
