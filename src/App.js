@@ -9,6 +9,7 @@ import MainComponent from "./components/Maincomponent";
 import SearchComponent from "./components/SearchComponent";
 import Crimemain from "./components/CrimemainComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Crimeresult from "./components/CrimeresultComponent";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainComponent />} />
           <Route path="/search" element={<SearchComponent />} />
           <Route path="/crime" element={<Crimemain />} />
+          <Route path="/crimeresult" element={<Crimeresult />} />
         </Routes>
       </BrowserRouter>
     </div>
