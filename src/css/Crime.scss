@@ -23,3 +23,44 @@
     }
   }
 }
+
+.App-crimeresult {
+  .crimeresult-body {
+    width: 90%;
+    height: 965px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 2px 2px rgb(170, 170, 170);
+    text-align: center;
+    .result-title {
+      margin-top: 3%;
+      font-size: 3rem;
+      color: #003333;
+    }
+    .title-body-between {
+      height: 0.2rem;
+    }
+    .result-body {
+      display: flex;
+      justify-content: center;
+      .result-table {
+        width: 90%;
+        border-collapse: separate;
+        border-spacing: 0 2rem;
+        td {
+          border-bottom: 1px solid black;
+        }
+        .result-word {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        .result-mean {
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
