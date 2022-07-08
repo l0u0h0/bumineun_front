@@ -27,7 +27,9 @@
 .App-crimeresult {
   .crimeresult-body {
     width: 90%;
-    height: 965px;
+    min-height: 965px;
+    height: auto;
+    overflow: hidden;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 10%;
@@ -49,15 +51,18 @@
         width: 90%;
         border-collapse: separate;
         border-spacing: 0 2rem;
+        text-align: start;
         td {
           border-bottom: 1px solid black;
         }
         .result-word {
-          font-size: 1.5rem;
+          width: 20%;
+          font-size: 1.7rem;
           font-weight: 600;
         }
         .result-mean {
-          font-size: 1.2rem;
+          width: 80%;
+          font-size: 1.3rem;
           font-weight: 400;
         }
       }
