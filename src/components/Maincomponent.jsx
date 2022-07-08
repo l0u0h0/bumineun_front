@@ -89,16 +89,16 @@ function Body1() {
 function Tab1() {
   const list = [1, 2, 3, 4, 5];
   return (
-    <div className="contents">
+    <div key="main_Tab1" className="contents">
       <div className="table-area-first">
         <table>
           <tbody>
             {list.map((num) => (
-              <tr>
+              <tr key={`table_row_${num}`}>
                 <th className="data-rank">{num}.</th>
                 <td className="data-word">킹받네</td>
                 <td className="data-state">-</td>
-                <td calssName="data-num">120,862</td>
+                <td className="data-num">120,862</td>
               </tr>
             ))}
           </tbody>
@@ -114,16 +114,16 @@ function Tab1() {
 function Tab2() {
   const list = [1, 2, 3, 4, 5];
   return (
-    <div className="contents">
+    <div key="main_Tab2" className="contents">
       <div className="table-area-second">
         <table>
           <tbody>
             {list.map((num) => (
-              <tr>
+              <tr key={`table_row_${num}`}>
                 <th className="data-rank">{num}.</th>
                 <td className="data-word">킹받네</td>
                 <td className="data-state">-</td>
-                <td calssName="data-num">120,862</td>
+                <td className="data-num">120,862</td>
               </tr>
             ))}
           </tbody>
@@ -138,7 +138,7 @@ function Tab2() {
 
 function Tab3() {
   return (
-    <div className="contents">
+    <div key="main_Tab3" className="contents">
       <div className="static-data-area">
         <img src={staticimg} alt="staticimg" className="static-img" />
       </div>
@@ -262,7 +262,7 @@ function Body2Example() {
           <Example key={img._id} list={img} />
         ))}
       </div>
-      <Link to="/crimemain">
+      <Link to="/crime">
         <button className="btn btn--link">범죄 관련 은어 확인</button>
       </Link>
     </div>

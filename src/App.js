@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainComponent />} />
           <Route path="/search" element={<SearchComponent />} />
-          <Route path="/crimemain" element={<Crimemain />} />
+          <Route path="/crime" element={<Crimemain />} />
         </Routes>
       </BrowserRouter>
     </div>
