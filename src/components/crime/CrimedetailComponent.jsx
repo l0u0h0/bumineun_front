@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
+import Header from "../common/HeaderComponent";
+import ex_img from "../../image/camera.png";
 import { useLocation } from "react-router-dom";
-import Header from "./common/HeaderComponent";
 
-export default function Crimeresult() {
+export default function Crimedetail() {
   const location = new URLSearchParams(useLocation().search);
   const type = location.get("category");
-  const [category, setCategory] = useState(null);
-  const [data, setData] = useState([]);
+  const [category, setCategory] = useState();
+  const [data, setData] = useState();
   useEffect(() => {
     if (type === "gambling") {
       setCategory("도박");
@@ -55,22 +56,15 @@ export default function Crimeresult() {
     ]);
   }, [type, category]);
   return (
-    <div className="App-crimeresult">
+    <div className="App-crimedetail">
       <Header />
-      <Card body className="crimeresult-body">
-        <h2 className="result-title">{category}</h2>
+      <Card body className="crimedetail-body">
+        <h2 className="detail-title">{data.word}</h2>
         <hr className="title-body-between" />
-        <div className="result-body">
-          <table className="result-table">
-            <tbody>
-              {data.map((data, num) => (
-                <tr className="result-row" key={`table_row_${num}`}>
-                  <td className="result-word">{data.word + (num + 1)}</td>
-                  <td className="result-mean">{data.mean}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="detail-body">
+          <h3>카테고리 - {category}</h3>
+          <img src={ex_img} alt="example_image" />
+          <p>{data.mean}</p>
         </div>
       </Card>
     </div>

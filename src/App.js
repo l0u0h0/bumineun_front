@@ -7,9 +7,10 @@ import "./css/Crime.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainComponent from "./components/Maincomponent";
 import SearchComponent from "./components/SearchComponent";
-import Crimemain from "./components/CrimemainComponent";
+import Crimemain from "./components/crime/CrimemainComponent";
+import Crimeresult from "./components/crime/CrimeresultComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Crimeresult from "./components/CrimeresultComponent";
+import Crimedetail from "./components/crime/CrimedetailComponent";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/search" element={<SearchComponent />} />
           <Route path="/crime" element={<Crimemain />} />
           <Route path="/crimeresult" element={<Crimeresult />} />
+          <Route path="/detail" element={<Crimedetail />} />
         </Routes>
       </BrowserRouter>
     </div>
