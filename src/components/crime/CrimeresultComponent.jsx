@@ -65,12 +65,16 @@ export default function Crimeresult() {
             <tbody>
               {data.map((data, num) => (
                 <tr className="result-row" key={`table_row_${num}`}>
-                  <Link
-                    to={`/crimeresult?category=${type}/detail?word=${data.word}?mean=${data.mean}`}
-                  >
-                    <td className="result-word">{data.word + (num + 1)}</td>
-                    <td className="result-mean">{data.mean}</td>
-                  </Link>
+                  <td className="result-word">
+                    <Link
+                      to={`/crimedetail?category=${category}&word=${
+                        data.word + (num + 1)
+                      }&mean=${data.mean}`}
+                    >
+                      {data.word + (num + 1)}
+                    </Link>
+                  </td>
+                  <td className="result-mean">{data.mean}</td>
                 </tr>
               ))}
             </tbody>

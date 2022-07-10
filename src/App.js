@@ -21,7 +21,7 @@ function App() {
           <Route path="/search" element={<SearchComponent />} />
           <Route path="/crime" element={<Crimemain />} />
           <Route path="/crimeresult" element={<Crimeresult />} />
-          <Route path="/detail" element={<Crimedetail />} />
+          <Route path="/crimedetail" element={<Crimedetail />} />
         </Routes>
       </BrowserRouter>
     </div>
