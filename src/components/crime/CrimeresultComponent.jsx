@@ -71,7 +71,9 @@ export default function Crimeresult() {
                         data.word + (num + 1)
                       }&mean=${data.mean}`}
                     >
-                      {data.word + (num + 1)}
+                      <div className="result-word-link">
+                        {data.word + (num + 1)}
+                      </div>
                     </Link>
                   </td>
                   <td className="result-mean">{data.mean}</td>

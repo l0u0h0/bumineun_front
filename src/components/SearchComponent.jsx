@@ -67,7 +67,7 @@ export default function SearchComponent() {
 function Searchresult(search) {
   const data = search.data.test;
   return (
-    <>
+    <div className="search-result">
       <div className="result-crime">
         <h2>범죄 사전</h2>
         <p>{data.crime}</p>
@@ -81,6 +81,6 @@ function Searchresult(search) {
         <h2>통계 추세</h2>
         <img src={data.static} alt="static-result" />
       </div>
-    </>
+    </div>
   );
 }
