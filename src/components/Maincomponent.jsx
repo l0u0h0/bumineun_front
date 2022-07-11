@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper";
 import "swiper/css";
 // Router import
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // axios import
 // import axios from "axios";
@@ -112,7 +112,11 @@ function Tab1() {
 }
 
 function Tab2() {
+  let navigate = useNavigate();
   const list = [1, 2, 3, 4, 5];
+  function LinkClick() {
+    navigate("/dictionary");
+  }
   return (
     <div key="main_Tab2" className="contents">
       <div className="table-area-second">
@@ -130,7 +134,9 @@ function Tab2() {
         </table>
       </div>
       <div className="link-area">
-        <button className="btn btn--link">더 많은 정보 확인</button>
+        <button className="btn btn--link" onClick={LinkClick}>
+          더 많은 정보 확인
+        </button>
       </div>
     </div>
   );

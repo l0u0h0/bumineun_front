@@ -11,6 +11,7 @@ import Crimemain from "./components/crime/CrimemainComponent";
 import Crimeresult from "./components/crime/CrimeresultComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Crimedetail from "./components/crime/CrimedetailComponent";
+import DictionaryMain from "./components/dictionary/DicionarymainComponent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/crime" element={<Crimemain />} />
           <Route path="/crimeresult" element={<Crimeresult />} />
           <Route path="/crimedetail" element={<Crimedetail />} />
+          <Route path="/dictionary" element={<DictionaryMain />} />
         </Routes>
       </BrowserRouter>
     </div>
