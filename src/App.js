@@ -4,6 +4,7 @@ import "./css/Header.scss";
 import "./css/Banner.scss";
 import "./css/Search.scss";
 import "./css/Crime.scss";
+import "./css/Dictionary.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainComponent from "./components/Maincomponent";
 import SearchComponent from "./components/SearchComponent";
